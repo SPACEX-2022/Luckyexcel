@@ -143,7 +143,7 @@ export class LuckyExcel{
      * @param LuckyJson :Luckysheet options json
      * @param callBack: Get Blob content
      */
-    static transformLuckyToExcel(luckyJson: ILuckyJson, callBack?: (content: Blob, title: string) => void) {
+    static async transformLuckyToExcel(luckyJson: ILuckyJson, callBack?: (content: ArrayBuffer, title: string) => void) {
 
         // Get filename and all sheets data
         const luckyFile:ILuckyFile = {
@@ -155,17 +155,19 @@ export class LuckyExcel{
 
         // JSON to XML string
         let excelFile = new ExcelFile(luckyFile);
-        let fileList:IdownloadfileList = excelFile.Parse();
+        let fileList: ArrayBuffer = await excelFile.Parse();
 
         // XML string to file
-        let zipFile:ZipFile = new ZipFile(fileList);
-        zipFile.zipFiles(function(content:Blob){
-            callBack(content, luckyJson.title)
-        },
+        // let zipFile:ZipFile = new ZipFile(fileList);
+        // zipFile.zipFiles(function(content:Blob){
+        //     callBack(Buffer, luckyJson.title)
+        // },
+
+        callBack(fileList, luckyJson.title);
         
-        function(err:Error){
-            console.error(err);
-        })
+        // function(err:Error){
+        //     console.error(err);
+        // })
 
     }
 }

@@ -35,6 +35,7 @@ export interface IluckySheet{
 
     celldata?:IluckySheetCelldata[],// cells
     chart?:IluckySheetChart[],
+    data: any[]; // data
 
     isPivotTable:boolean,
     pivotTable?:IluckySheetPivotTable,

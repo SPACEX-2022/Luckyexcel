@@ -26,6 +26,7 @@ export class LuckySheetBase implements IluckySheet{
 
     celldata:IluckySheetCelldata[]
     chart:IluckySheetChart[]
+    data:any[]
 
     isPivotTable:boolean
     pivotTable:IluckySheetPivotTable

@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "description": "An excel import and export library adapted to Luckysheet",
   "main": "dist/luckyexcel.cjs.js",
+  "types": "types/index.d.ts",
   "module": "dist/luckyexcel.esm.js",
   "browser": "dist/luckyexcel.umd.js",
   "scripts": {
@@ -46,6 +47,7 @@
     "watchify": "^3.11.1"
   },
   "dependencies": {
+    "exceljs": "^4.4.0",
     "jszip": "^3.5.0"
   }
 }

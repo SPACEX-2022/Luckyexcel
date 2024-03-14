@@ -135,8 +135,9 @@
                         save.addEventListener('click',function(evt){
                             var luckyJson = luckysheet.toJson();
                             LuckyExcel.transformLuckyToExcel(luckyJson,function(content,filename){
+                                console.log(content);
                                 // Use FileSaver.js to download XLSX file
-                                saveAs(content,filename);
+                                saveAs(new Blob([content]),filename);
                             })
                         })
                     }
