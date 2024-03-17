@@ -1,6 +1,6 @@
 {
   "name": "@dl/luckyexcel",
-  "version": "1.1.1",
+  "version": "1.1.2",
   "description": "An excel import and export library adapted to Luckysheet",
   "main": "dist/luckyexcel.cjs.js",
   "types": "types/index.d.ts",
