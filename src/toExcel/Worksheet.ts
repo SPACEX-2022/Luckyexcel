@@ -188,7 +188,7 @@ const alignmentConvert = (vt = 'default', ht = 'default', tb = 'default', tr = '
             0: 'middle',
             1: 'top',
             2: 'bottom',
-            default: 'top'
+            default: 'middle'
         },
         horizontal: {
             0: 'center',
