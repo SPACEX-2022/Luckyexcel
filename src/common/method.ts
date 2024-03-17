@@ -207,12 +207,30 @@ export function getColumnWidthPixel(columnWidth:number){
     return pix;
 }
 
+/**
+ * @columnWidth pixel column width
+ * @return Excel column width
+*/
+export function getColumnWidthExcel(columnWidth:number){
+    let pix = Math.round((columnWidth-5) / 8 + 0.83);
+    return pix;
+}
+
 /** 
  * @rowHeight Excel row height
  * @return pixel row height
 */
 export function getRowHeightPixel(rowHeight:number){
     let pix = Math.round(rowHeight/getptToPxRatioByDPI());
+    return pix;
+}
+
+/**
+ * @rowHeight pixel row height
+ * @return Excel row height
+*/
+export function getRowHeightExcel(rowHeight:number){
+    let pix = Math.round(rowHeight*getptToPxRatioByDPI());
     return pix;
 }
 
